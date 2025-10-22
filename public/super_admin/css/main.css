@@ -1,0 +1,19 @@
+.image-input .image-input-wrapper-logo {
+    width: 330px;
+    height: 100px;
+    border-radius: .42rem;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.header-fixed.subheader-fixed.subheader-enabled .wrapper {
+    padding-top: 65px;
+}
+
+.client_tr:hover{
+    cursor: pointer;
+}
+
+.deactive_equipment{
+    color: grey
+}

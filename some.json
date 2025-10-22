@@ -1,0 +1,393 @@
+{
+    "event_id": "01GQFWSVZ2SC9J7BFJW3GZ5D9F",
+    "event_type": "form_response",
+    "form_response": {
+        "form_id": "nIUJWyTP",
+        "token": "y7qtq6oiik4ew05oi5ppflxy7qtq6zbn",
+        "landed_at": "2023-01-23T18:02:57Z",
+        "submitted_at": "2023-01-23T18:03:47Z",
+        "definition": {
+            "id": "nIUJWyTP",
+            "title": "Clo3D",
+            "fields": [
+                {
+                    "id": "71LutVUquwbu",
+                    "ref": "b471db42-a76f-4b98-ad5f-e7a62631de2f",
+                    "type": "multiple_choice",
+                    "title": "Apa jenis kelaminmu?",
+                    "properties": {},
+                    "choices": [
+                        {
+                            "id": "5adrA9F2aOT3",
+                            "label": "Laki - laki"
+                        },
+                        {
+                            "id": "Rqozsug3y6ym",
+                            "label": "Perempuan"
+                        },
+                        {
+                            "id": "2rFppHxngI1i",
+                            "label": "Memilih tidak menjawab"
+                        }
+                    ]
+                },
+                {
+                    "id": "XKvxciOqQdPK",
+                    "ref": "e19f3db0-5bde-4a10-bcac-77566e7b2544",
+                    "type": "date",
+                    "title": "Kapan kamu siap untuk memulai kursus?",
+                    "properties": {}
+                },
+                {
+                    "id": "R4CE5r6muFfh",
+                    "ref": "91917c3c4fea2f47",
+                    "type": "short_text",
+                    "title": "Apa pekerjaanmu saat ini?",
+                    "properties": {}
+                },
+                {
+                    "id": "cyVW5osSNTne",
+                    "ref": "faa949d1-0573-4b61-a198-9aac80e0dbb7",
+                    "type": "multiple_choice",
+                    "title": "Apakah kamu memiliki laptop / PC untuk belajar?",
+                    "properties": {},
+                    "choices": [
+                        {
+                            "id": "CGlu89v02T3b",
+                            "label": "Ya"
+                        },
+                        {
+                            "id": "LMGRwMQ7zyd7",
+                            "label": "Tidak"
+                        }
+                    ]
+                },
+                {
+                    "id": "IBTRrC4ZNuDq",
+                    "ref": "02e199ab-82c9-4efa-abba-34020a6de8be",
+                    "type": "multiple_choice",
+                    "title": "Berapa usiamu?",
+                    "properties": {},
+                    "choices": [
+                        {
+                            "id": "gPZ2ktYTwvjv",
+                            "label": "15-17"
+                        },
+                        {
+                            "id": "wuXzxYU3Ort8",
+                            "label": "18-21"
+                        },
+                        {
+                            "id": "bEH3bSRLoU7o",
+                            "label": "22-28"
+                        },
+                        {
+                            "id": "BWYamU0LeYQk",
+                            "label": "29-34"
+                        },
+                        {
+                            "id": "WR7EEtrI169s",
+                            "label": "35-40"
+                        },
+                        {
+                            "id": "ZH1ii04Nao6A",
+                            "label": "41-49"
+                        },
+                        {
+                            "id": "Y7UDB6sLES2S",
+                            "label": "50-64"
+                        },
+                        {
+                            "id": "09NTa9oHwC7C",
+                            "label": "65+"
+                        }
+                    ]
+                },
+                {
+                    "id": "eIjZYADo6062",
+                    "ref": "3f60b1e6-b529-4e65-ac5c-a63a7ce8de6a",
+                    "type": "multiple_choice",
+                    "title": "Apa latar belakang pendidikanmu?",
+                    "properties": {},
+                    "allow_other_choice": true,
+                    "choices": [
+                        {
+                            "id": "SusUl7KdYpBC",
+                            "label": "Tamat SMP"
+                        },
+                        {
+                            "id": "tlkdhjT77GOq",
+                            "label": "Tamat SMA/SMK"
+                        },
+                        {
+                            "id": "C1E6W2uI0ovT",
+                            "label": "Pendidikan tinggi namun tidak selesai"
+                        },
+                        {
+                            "id": "39UnKSUq7Esd",
+                            "label": "Pendidikan tinggi hingga selesai"
+                        },
+                        {
+                            "id": "zo2GE89JRpnR",
+                            "label": "Doktor atau Phd"
+                        }
+                    ]
+                },
+                {
+                    "id": "tLFUbIVuuBzB",
+                    "ref": "6ceecd66-4514-4626-bdf8-3210379ff8f2",
+                    "type": "multiple_choice",
+                    "title": "Berapa penghasilanmu dalam sebulan?",
+                    "properties": {},
+                    "choices": [
+                        {
+                            "id": "y477YRD0KzOE",
+                            "label": "Saat ini saya tidak bekerja"
+                        },
+                        {
+                            "id": "zW05lYU0Uxih",
+                            "label": "Kurang dari Rp 1.500.000"
+                        },
+                        {
+                            "id": "linee8cFxUTa",
+                            "label": "Rp1.500.000 - Rp2.900.000"
+                        },
+                        {
+                            "id": "MFvsqeBuFeCT",
+                            "label": "Rp3.000.000 - Rp4.400.000"
+                        },
+                        {
+                            "id": "HHbWtc0n3PQC",
+                            "label": "Rp4.500.000 - Rp6.400.000"
+                        },
+                        {
+                            "id": "zULfWNZ49GGn",
+                            "label": "Rp6.500.000 - Rp8.400.000"
+                        },
+                        {
+                            "id": "9lK6vD032tv9",
+                            "label": "Rp8.500.000 - Rp10.400.000"
+                        },
+                        {
+                            "id": "2pfx3hz2vFuG",
+                            "label": "Rp10.500.000 - Rp14.900.000"
+                        },
+                        {
+                            "id": "2YQ5batq7aIT",
+                            "label": "Rp15.000.000 - Rp25.000.000"
+                        },
+                        {
+                            "id": "tacF831MT1ZU",
+                            "label": "Lebih dari Rp25.000.000"
+                        }
+                    ]
+                },
+                {
+                    "id": "B0g0ZDQeEqie",
+                    "ref": "7ece885e-f724-4ccf-94c1-bdc90e1e1aba",
+                    "type": "multiple_choice",
+                    "title": "Apakah kamu memiliki pengalaman dalam fashion design, 3D design, CAD, pattern making, atau hal lain terkait fashion?",
+                    "properties": {},
+                    "choices": [
+                        {
+                            "id": "Ms0lDIRDWf3w",
+                            "label": "Tidak"
+                        },
+                        {
+                            "id": "kj1pYuOj8AMd",
+                            "label": "Kurang dari 1 tahun"
+                        },
+                        {
+                            "id": "qukbfetLU0C7",
+                            "label": "1-3 tahun"
+                        },
+                        {
+                            "id": "Z3G9u2pWzLj1",
+                            "label": "3-5 tahun"
+                        },
+                        {
+                            "id": "L7C5Wf0yPppn",
+                            "label": "Lebih dari 5 tahun"
+                        }
+                    ]
+                },
+                {
+                    "id": "fwZYDZvXJSnF",
+                    "ref": "89ff7df2-05b8-40b0-8233-dced83fbf224",
+                    "type": "short_text",
+                    "title": "Mengapa belajar clo3d relevan bagimu?",
+                    "properties": {}
+                },
+                {
+                    "id": "aVlSRxQPS7zP",
+                    "ref": "51035105-aa8e-4e4b-9c38-7a75cbfab266",
+                    "type": "short_text",
+                    "title": "Hasil apa yang kamu harapkan selama/pada akhir kursus?",
+                    "properties": {}
+                },
+                {
+                    "id": "Lmo9o39wnuPE",
+                    "ref": "2054e27e-46ef-49ce-a246-eed5fad5f32d",
+                    "type": "multiple_choice",
+                    "title": "Siapa pengambil keputusan terkait pendidikanmu?",
+                    "properties": {},
+                    "allow_other_choice": true,
+                    "choices": [
+                        {
+                            "id": "zmDIVARb9UtX",
+                            "label": "Saya sendiri"
+                        },
+                        {
+                            "id": "uL6zEkL8cZ4y",
+                            "label": "Atasan saya"
+                        },
+                        {
+                            "id": "PC9IlyW8povY",
+                            "label": "Orang tua saya"
+                        },
+                        {
+                            "id": "pYHZTPSrYecF",
+                            "label": "Orang tua saya dan saya"
+                        },
+                        {
+                            "id": "1tjGFmZNWreh",
+                            "label": "Pasangan saya"
+                        }
+                    ]
+                },
+                {
+                    "id": "iXVxD7n2btfa",
+                    "ref": "8411b220-4b5d-4d67-87a5-ef73af0edaa6",
+                    "type": "email",
+                    "title": "Apa alamat emailmu?",
+                    "properties": {}
+                }
+            ]
+        },
+        "answers": [
+            {
+                "type": "choice",
+                "choice": {
+                    "label": "Laki - laki"
+                },
+                "field": {
+                    "id": "71LutVUquwbu",
+                    "type": "multiple_choice",
+                    "ref": "b471db42-a76f-4b98-ad5f-e7a62631de2f"
+                }
+            },
+            {
+                "type": "date",
+                "date": "2023-10-13",
+                "field": {
+                    "id": "XKvxciOqQdPK",
+                    "type": "date",
+                    "ref": "e19f3db0-5bde-4a10-bcac-77566e7b2544"
+                }
+            },
+            {
+                "type": "text",
+                "text": "21321321",
+                "field": {
+                    "id": "R4CE5r6muFfh",
+                    "type": "short_text",
+                    "ref": "91917c3c4fea2f47"
+                }
+            },
+            {
+                "type": "choice",
+                "choice": {
+                    "label": "Ya"
+                },
+                "field": {
+                    "id": "cyVW5osSNTne",
+                    "type": "multiple_choice",
+                    "ref": "faa949d1-0573-4b61-a198-9aac80e0dbb7"
+                }
+            },
+            {
+                "type": "choice",
+                "choice": {
+                    "label": "65+"
+                },
+                "field": {
+                    "id": "IBTRrC4ZNuDq",
+                    "type": "multiple_choice",
+                    "ref": "02e199ab-82c9-4efa-abba-34020a6de8be"
+                }
+            },
+            {
+                "type": "choice",
+                "choice": {
+                    "label": "Tamat SMP"
+                },
+                "field": {
+                    "id": "eIjZYADo6062",
+                    "type": "multiple_choice",
+                    "ref": "3f60b1e6-b529-4e65-ac5c-a63a7ce8de6a"
+                }
+            },
+            {
+                "type": "choice",
+                "choice": {
+                    "label": "Lebih dari Rp25.000.000"
+                },
+                "field": {
+                    "id": "tLFUbIVuuBzB",
+                    "type": "multiple_choice",
+                    "ref": "6ceecd66-4514-4626-bdf8-3210379ff8f2"
+                }
+            },
+            {
+                "type": "choice",
+                "choice": {
+                    "label": "Lebih dari 5 tahun"
+                },
+                "field": {
+                    "id": "B0g0ZDQeEqie",
+                    "type": "multiple_choice",
+                    "ref": "7ece885e-f724-4ccf-94c1-bdc90e1e1aba"
+                }
+            },
+            {
+                "type": "text",
+                "text": "some@gmail.com",
+                "field": {
+                    "id": "fwZYDZvXJSnF",
+                    "type": "short_text",
+                    "ref": "89ff7df2-05b8-40b0-8233-dced83fbf224"
+                }
+            },
+            {
+                "type": "text",
+                "text": "awewadwa",
+                "field": {
+                    "id": "aVlSRxQPS7zP",
+                    "type": "short_text",
+                    "ref": "51035105-aa8e-4e4b-9c38-7a75cbfab266"
+                }
+            },
+            {
+                "type": "choice",
+                "choice": {
+                    "label": "Pasangan saya"
+                },
+                "field": {
+                    "id": "Lmo9o39wnuPE",
+                    "type": "multiple_choice",
+                    "ref": "2054e27e-46ef-49ce-a246-eed5fad5f32d"
+                }
+            },
+            {
+                "type": "email",
+                "email": "some2@gmail.com",
+                "field": {
+                    "id": "iXVxD7n2btfa",
+                    "type": "email",
+                    "ref": "8411b220-4b5d-4d67-87a5-ef73af0edaa6"
+                }
+            }
+        ],
+        "thankyou_screen_ref": "719be4b5-94b2-4f36-98db-a642d23fed28"
+    }
+}

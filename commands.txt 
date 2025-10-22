@@ -1,0 +1,35 @@
+# Швидкий старт
+
+## Автоматично:
+```bash
+cd /home/admingiant/PhpstormProjects/cms.gpscom
+chmod +x laravel_start.sh
+./laravel_start.sh
+```
+
+## Вручну:
+```bash
+# 1. Скопіювати файли в /home/admingiant/PhpstormProjects/cms.gpscom/
+
+# 2. Налаштувати .env:
+nano cms.gpscom.kz/.env
+# Змінити: DB_HOST=db, DB_DATABASE=cms_gpscom, DB_USERNAME=root, DB_PASSWORD=root
+
+# 3. Запустити:
+docker-compose up -d
+docker exec cms_gpscom_php composer install
+docker exec cms_gpscom_php php artisan key:generate
+docker exec cms_gpscom_php php artisan storage:link
+
+# 4. Відкрити:
+# http://localhost:8080
+# http://localhost:8081 (PHPMyAdmin: root/root)
+```
+
+## Команди:
+```bash
+docker-compose stop          # Зупинити
+docker-compose start         # Запустити
+docker-compose logs -f       # Логи
+docker exec cms_gpscom_php php artisan [команда]
+```
