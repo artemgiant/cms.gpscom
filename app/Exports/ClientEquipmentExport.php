@@ -34,7 +34,7 @@ class ClientEquipmentExport implements FromCollection, WithColumnWidths, WithSty
         $totalPrice = 0;
         foreach ($rows as $row) {
             /** Кількість днів */
-            $days = SettingService::getDays($row, $this->date);
+             $days = $row->getDaysInFilteredMonth($this->date);
 
             /** Ціна */
             $price = self::getPrice($rows, $row, $days, $this->date);
@@ -53,7 +53,7 @@ class ClientEquipmentExport implements FromCollection, WithColumnWidths, WithSty
                         'phone_2' => $row->phone2,
                         'date_start' => $row->date_start ? date('d.m.Y', strtotime($row->date_start)) : '',
                         'date_end' => $row->date_end ? date('d.m.Y', strtotime($row->date_end)) : '',
-                        'days' => $days,
+                        'days' =>  $days > 0 ? $days : '0',
                         'price' => $price > 0 ? $price : '0',
                     ]);
                 } else {
@@ -65,7 +65,7 @@ class ClientEquipmentExport implements FromCollection, WithColumnWidths, WithSty
                         'phone_2' => $row->phone2,
                         'date_start' => $row->date_start ? date('d.m.Y', strtotime($row->date_start)) : '',
                         'date_end' => $row->date_end ? date('d.m.Y', strtotime($row->date_end)) : '',
-                        'days' => $days,
+                        'days' => $days > 0 ? $days : '0',
                         'price' => $price > 0 ? $price : '0',
                     ]);
                 }
@@ -78,7 +78,7 @@ class ClientEquipmentExport implements FromCollection, WithColumnWidths, WithSty
                     'phone_2' => $row->phone2,
                     'date_start' => $row->date_start ? date('d.m.Y', strtotime($row->date_start)) : '',
                     'date_end' => $row->date_end ? date('d.m.Y', strtotime($row->date_end)) : '',
-                    'days' => $days,
+                    'days' => $days > 0 ? $days : '0',
                     'price' => $price > 0 ? $price : '0',
                 ]);
             }
@@ -105,7 +105,7 @@ class ClientEquipmentExport implements FromCollection, WithColumnWidths, WithSty
             'date_start' => '',
             'date_end' => '',
             'days' => 'Всего',
-            'price' => $totalPrice,
+            'price' =>  $totalPrice > 0 ? $totalPrice : '0',
         ];
 
         return $equipment;
@@ -133,11 +133,17 @@ class ClientEquipmentExport implements FromCollection, WithColumnWidths, WithSty
                 $price += $row->getEquipmentWorkDays($clientTariff->price, $days, $filterDate);
             }
         } else {
-            $price += $row->getPrice();
+
+            $price += $row->getPrice($filterDate);
+
         }
 
         return $price;
     }
+
+
+
+
 
     public function columnWidths(): array
     {

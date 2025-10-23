@@ -620,4 +620,8 @@ class ClientController extends Controller
 
         return redirect()->back()->with('success', 'Информация о клиенте и его оборудовании успешно обновлена!');
     }
+
+
+
+
 }

@@ -147,11 +147,13 @@ class Equipment extends Model
      * @return int
      * @throws \Exception
      */
-    public function getPrice()
+    public function getPrice($filterDate = null)
     {
         $price = 0;
         $date = date('Y.m');
-        $days = SettingService::getDays($this, $date);
+
+        $days = $this->getDaysInFilteredMonth($filterDate);
+
 
         $clientTariff = ClientTariff::where('client_id', $this->client_id)
             ->where('tariff_id', Tariff::FIXX)
@@ -173,11 +175,46 @@ class Equipment extends Model
         } else {
             $tariffPrice = $this->getOperatorTariffPrice();
             $price += $this->getEquipmentWorkDays($tariffPrice, $days, $date);
+
         }
 
 
         return $price > 0 ? $price : 0;
     }
+
+    public function getDaysInFilteredMonth( $filterDate)
+    {
+
+        $dateStart = $this->data_start;
+        $dateEnd = $this->date_end;
+
+        $start = \Carbon\Carbon::parse($dateStart);
+        $filter = \Carbon\Carbon::parse($filterDate);
+
+        // Визначаємо перший і останній день фільтруємого місяця
+        $monthStart = $filter->copy()->startOfMonth();
+        $monthEnd = $filter->copy()->endOfMonth();
+
+        // Якщо date_end не задано, використовуємо кінець місяця або поточну дату
+        if ($dateEnd === null) {
+            $end = \Carbon\Carbon::now()->lt($monthEnd) ? \Carbon\Carbon::now() : $monthEnd;
+        } else {
+            $end = \Carbon\Carbon::parse($dateEnd);
+        }
+
+// Якщо period взагалі не перетинається з місяцем фільтра - повертаємо 0
+        if ($end->lt($monthStart) || $start->gt($monthEnd)) {
+            return 0;
+        }
+
+// Визначаємо реальний початок і кінець для підрахунку
+        $countStart = $start->gt($monthStart) ? $start : $monthStart;
+        $countEnd = $end->lt($monthEnd) ? $end : $monthEnd;
+
+// Рахуємо кількість днів (включно)
+        return $countStart->diffInDays($countEnd) + 1;
+    }
+
 
     public function getTariff()
     {
