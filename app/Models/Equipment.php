@@ -185,17 +185,19 @@ class Equipment extends Model
     public function getDaysInFilteredMonth( $filterDate)
     {
 
-        $dateStart = $this->data_start;
+        $dateStart = $this->date_start;
         $dateEnd = $this->date_end;
 
+
         $start = \Carbon\Carbon::parse($dateStart);
-        $filter = \Carbon\Carbon::parse($filterDate);
+        $filter = \Carbon\Carbon::createFromFormat('Y.m', $filterDate);
 
         // Визначаємо перший і останній день фільтруємого місяця
         $monthStart = $filter->copy()->startOfMonth();
         $monthEnd = $filter->copy()->endOfMonth();
 
         // Якщо date_end не задано, використовуємо кінець місяця або поточну дату
+//        dump($this);
         if ($dateEnd === null) {
             $end = \Carbon\Carbon::now()->lt($monthEnd) ? \Carbon\Carbon::now() : $monthEnd;
         } else {
@@ -211,6 +213,11 @@ class Equipment extends Model
         $countStart = $start->gt($monthStart) ? $start : $monthStart;
         $countEnd = $end->lt($monthEnd) ? $end : $monthEnd;
 
+//dump("start->gt(monthStart) =  ".$start->gt($monthStart), $countStart->toDateTimeString());
+//
+//dump("end->lt(monthEnd) =  ".$end->lt($monthEnd), $countEnd->toDateTimeString(),$end,$monthEnd);
+
+//        dump($countStart->diffInDays($countEnd) + 1);
 // Рахуємо кількість днів (включно)
         return $countStart->diffInDays($countEnd) + 1;
     }
