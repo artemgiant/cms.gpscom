@@ -199,7 +199,7 @@ class Equipment extends Model
         // Якщо date_end не задано, використовуємо кінець місяця або поточну дату
 //        dump($this);
         if ($dateEnd === null) {
-            $end = \Carbon\Carbon::now()->lt($monthEnd) ? \Carbon\Carbon::now() : $monthEnd;
+            $end = $monthEnd;
         } else {
             $end = \Carbon\Carbon::parse($dateEnd);
         }
@@ -213,12 +213,7 @@ class Equipment extends Model
         $countStart = $start->gt($monthStart) ? $start : $monthStart;
         $countEnd = $end->lt($monthEnd) ? $end : $monthEnd;
 
-//dump("start->gt(monthStart) =  ".$start->gt($monthStart), $countStart->toDateTimeString());
-//
-//dump("end->lt(monthEnd) =  ".$end->lt($monthEnd), $countEnd->toDateTimeString(),$end,$monthEnd);
 
-//        dump($countStart->diffInDays($countEnd) + 1);
-// Рахуємо кількість днів (включно)
         return $countStart->diffInDays($countEnd) + 1;
     }
 
