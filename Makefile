@@ -182,5 +182,50 @@ prune: ## Видалити невикористані Docker ресурси
 	@echo "${GREEN}✓ Готово!${RESET}"
 
 
+
+
+# Змінні для підключення до сервера
+SERVER_USER := root
+SERVER_HOST := 164.92.139.111
+SERVER_PATH := /var/www/crm-developer.pro
+SSH_KEY := ~/.ssh/id_rsa
+DEPLOY_SCRIPT := deploy.sh
+
+deploy:
+	@echo "Запуск деплою на сервері..."
+	@ssh -i $(SSH_KEY) $(SERVER_USER)@$(SERVER_HOST) \
+		'cd $(SERVER_PATH) && bash $(DEPLOY_SCRIPT)'
+	@echo "Деплой завершено!"
+
+
+# Скопіювати локальний deploy.sh на сервер і запустити
+deploy-local:
+	@echo "Копіювання deploy.sh на сервер..."
+	@scp -i $(SSH_KEY) $(DEPLOY_SCRIPT) $(SERVER_USER)@$(SERVER_HOST):$(SERVER_PATH)/
+	@echo "Надання прав на виконання..."
+	@ssh -i $(SSH_KEY) $(SERVER_USER)@$(SERVER_HOST) \
+		'chmod +x $(SERVER_PATH)/$(DEPLOY_SCRIPT)'
+	@echo "Запуск деплою..."
+	@ssh -i $(SSH_KEY) $(SERVER_USER)@$(SERVER_HOST) \
+		'cd $(SERVER_PATH) && ./$(DEPLOY_SCRIPT)'
+	@echo "Деплой завершено!"
+
+# Переглянути логи
+logs:
+	@ssh -i $(SSH_KEY) $(SERVER_USER)@$(SERVER_HOST) \
+		'tail -n 50 $(SERVER_PATH)/storage/logs/laravel.log'
+
+# Перезапустити PHP-FPM
+restart-php:
+	@ssh -i $(SSH_KEY) $(SERVER_USER)@$(SERVER_HOST) \
+		'sudo systemctl restart php8.3-fpm'
+	@echo "PHP-FPM перезапущено"
+
+# Перезапустити Nginx
+restart-nginx:
+	@ssh -i $(SSH_KEY) $(SERVER_USER)@$(SERVER_HOST) \
+		'sudo systemctl restart nginx'
+	@echo "Nginx перезапущено"
+
 # За замовчуванням показати допомогу
 .DEFAULT_GOAL := help
