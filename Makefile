@@ -16,6 +16,11 @@ help: ## Показати всі доступні команди
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  ${YELLOW}%-20s${GREEN}%s${RESET}\n", $$1, $$2}' $(MAKEFILE_LIST)
 	@echo ''
 
+
+fix-permissions:
+	sudo chown -R $(USER):$(USER) .
+#sudo chown -R $USER:$USER .
+
 # Установка проекту
 install: ## Установка залежностей та початкове налаштування
 	@echo "${GREEN}Установка проекту...${RESET}"
